@@ -4,7 +4,7 @@ body {
 
 .container {
 	display: grid; /*Inicio de Grid Layout (?*/
-	grid-template-columns: 25% 50% 20%;
+	grid-template-columns: 25% 50% 20%;/*Definiendo columnas*/
 }
 
 .item {

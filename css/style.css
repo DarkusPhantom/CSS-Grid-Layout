@@ -1,0 +1,14 @@
+body {
+	font-family: Arial;
+}
+
+.container {
+	display: grid; /*Inicio de Grid Layout (?*/
+	grid-template-columns: 25% 50% 20%;
+}
+
+.item {
+	background-color: lightblue;
+	padding: 10px;
+	border: 1px solid red;
+}

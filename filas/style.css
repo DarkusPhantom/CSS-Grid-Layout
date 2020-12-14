@@ -1,0 +1,16 @@
+body {
+	font-family: Arial;
+}
+
+.container {
+	display: grid; /*Inicio de Grid Layout (?*/
+	grid-template-columns: 25% 200px 25%;/*Definiendo columnas*/
+	grid-template-rows: 300px 300px;
+	grid-template: 300px 100px 100px / 50% 200px 100px; /*grid-template: filas / columnas;*/
+}
+
+.item {
+	background-color: lightblue;
+	padding: 10px;
+	border: 1px solid red;
+}

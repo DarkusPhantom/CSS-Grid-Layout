@@ -4,18 +4,29 @@ body{
 	font-family: Arial;
 }
 img {
-	height: 200px;
+	max-width: 100%;
 }
-.post-list {
+
+.container {
 	display: grid;
-	grid-template-columns: repeat(4, minmax(100px, 240px));
+	grid-template-columns: repeat(auto-fill, 250px);
 	justify-content: center;
-	grid-gap: 28px;
+	grid-gap: 5px;
 }
 .post {
 	cursor: pointer;
 	position: relative;
 	display: block;
+	border: 1px solid red;
+}
+.post-level1 {
+  grid-row-end: span 3;
+}
+.post-level2 {
+	grid-row-end: span 2;
+}
+.post-level3 {
+	grid-row-end: span 1;
 }
 .post-image{
 	margin: 0;
@@ -42,7 +53,6 @@ img {
 	grid-template-rows: repeat(2, 70px);
 	grid-auto-flow: column;
 	align-content: space-between;
-
 }
 .post-save,
 .post-more{

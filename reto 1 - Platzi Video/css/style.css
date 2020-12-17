@@ -1,0 +1,49 @@
+:root {
+	--color-blue-dark:#171b2f;
+	--color-white: white;
+	--espaciado: 10px;
+}
+body {
+	margin: 0;
+	font-family: Arial;
+}
+a {
+	color:var(--color-white);
+	text-decoration: none;
+}
+.wrap {
+	width: auto;
+	height: 300vh;
+}
+/*---------Sidebar---------*/
+.sidebar {
+	width: 22%;
+	height: 100%;
+	padding: 25px 30px 0 10px;
+	background-color: var(--color-blue-dark);
+	color: var(--color-white);
+}
+.logo {
+	margin-bottom: var(--espaciado);
+}
+/*Playlist*/
+.container-playlist {
+	width: 95%;
+	margin: 0 auto;
+}
+.my-playlist {
+	width: 95%;
+	margin-bottom: 5vh;
+}
+.playlist {
+	display: grid;
+	grid-template-columns: 45px 1fr;
+	grid-template-rows: auto;
+	margin-bottom: var(--espaciado);
+}
+.playlist-icon {
+	border-radius: 50%;
+}
+.playlist-friend-name {
+	margin-top: 7px;
+}

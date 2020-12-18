@@ -1,17 +1,36 @@
 /*-----------    Variables  ---------------*/
 :root {
-	--color-blue-dark:#171b2f;
+	/*Colors*/
+	--color-dark-blue: #171b2f;
+	--color-blue:#197CDF;
 	--color-white: white;
+	--color-light-gray:rgba(107,103,103,.77);
+	--color-gray: #6b6767;
+	--color-yellow:#EEE20A;
+	--color-red:#F21802;
+	--color-ligth-red: rgba(242,24,2,.9);
+	--color-lila:#7B60D3;
+
+	/*Space*/
 	--espaciado: 10px;
+
+	/*Font-size*/
+	--font-big: 16px;
 	--font-medium: 14px;
+	--font-small: 12px;
 }
+/*------------  Fuentes  ------------------*/
+/*Roboto*/
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
 /*------------ 		General --------------*/
-body {
+* {
 	margin: 0;
-	font-family: Arial;
+	padding: 0;
+}
+body {
+	font-family: "Roboto", Arial, sans-serif;
 }
 a {
-	color:var(--color-white);
 	text-decoration: none;
 }
 
@@ -22,17 +41,21 @@ a {
 }
 .wrap {
 	display: grid;
-	grid-template: 370px 100px 1fr / .6fr 1fr .8fr;
+	grid-template: 370px 125px 1fr / .6fr 1fr .8fr;
 	grid-template-areas:	"sidebar video video"
 												"sidebar description description"
 												"sidebar comments suggest"
+}
+.container {
+	width: 95%;
+	height: auto;
 }
 /*---------   Sidebar     ---------*/
 .sidebar {
 	grid-area: sidebar;
 	height: 150vh;
 	padding: 15px 0 0 10px;
-	background-color: var(--color-blue-dark);
+	background-color: var(--color-dark-blue);
 	color: var(--color-white);
 }
 /*Logo*/
@@ -48,8 +71,12 @@ a {
 .playlist-friends {
 	width: 80%;
 }
-.playlist .playlist-name, .playlist-friend-name{
+.playlist-name, .playlist-friend-name{
 	font-size: var(--font-medium);
+}
+/*Playlist titulo*/
+.playlist-title{
+	margin-bottom: 15px;
 }
 /*My Playlist*/
 .my-playlist {
@@ -60,6 +87,9 @@ a {
 	grid-template-columns: 45px 1fr;
 	grid-template-rows: auto;
 	margin-bottom: var(--espaciado);
+}
+.playlist-name, .playlist-friend-name {
+	color:var(--color-white);
 }
 .playlist .playlist-name:hover {
 	text-decoration-line: underline;
@@ -82,7 +112,71 @@ a {
 /*---------    Descripcion      -------*/
 .description {
 	grid-area: description;
+	padding: 20px 15px;
+	box-shadow: 0 1px 3px var(--color-gray);
 }
+/*Nombre video*/
+.description-name-video {
+	color: var(--color-gray);
+	font-size: var(--font-big);
+	font-family: 'Roboto', sans-serif;
+	text-transform: capitalize;
+}
+/*View*/
+.description-view {
+	padding: 0 0 15px 2px;
+}
+.description-view .view {
+	font-size: var(--font-medium);
+	color: var(--color-light-gray);
+}
+.description-option {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	padding: 10px 0;
+}
+/*descripcion botones*/
+.btn {
+	border-radius: 20px;
+	font-size: var(--font-small);
+	padding: 7px 10px;
+	margin-right: 10px;
+	color: var(--color-white);
+}
+.btn:last-child {
+	margin: 0;
+}
+.add-list {
+	border-radius: 10px;
+	background-color: var(--color-red);
+	font-size: var(--font-medium);
+	padding: 10px 12px;
+}
+.add-list:hover {
+	background-color: var(--color-ligth-red);
+}
+.share, .save {
+	color: var(--color-gray);
+}
+.share:hover, .save:hover {
+	color: var(--color-white);
+	background-color: var(--color-gray);
+}
+.electronic {
+	background-color: var(--color-blue);
+}
+.pikachu {
+	background-color: var(--color-yellow);
+}
+.dance {
+	background-color: var(--color-lila);
+}
+.pokemon {
+	background-color: var(--color-red);
+}
+
+
+
 
 /*--------     Comments      -----------*/
 .comments {

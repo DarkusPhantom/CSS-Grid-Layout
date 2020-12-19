@@ -5,6 +5,7 @@
 	--color-blue:#197CDF;
 	--color-white: white;
 	--color-light-gray:rgba(107,103,103,.77);
+	--color-highligth-gray: rgb(165 163 163 / 34%);
 	--color-gray: #6b6767;
 	--color-yellow:#EEE20A;
 	--color-red:#F21802;
@@ -140,7 +141,7 @@ a {
 	border-radius: 20px;
 	font-size: var(--font-small);
 	padding: 7px 10px;
-	margin-right: 10px;
+	margin-right: var(--espaciado);
 	color: var(--color-white);
 }
 .btn:last-child {
@@ -174,14 +175,40 @@ a {
 .pokemon {
 	background-color: var(--color-red);
 }
-
-
-
-
 /*--------     Comments      -----------*/
 .comments {
-	grid-area: comments
+	grid-area: comments;
+	padding: 4vh 0 0 5vh;
 }
+.comment-header {
+	font-size: var(--font-medium);
+	color: var(--color-gray);
+	font-weight: 200;
+	margin-bottom: var(--espaciado);
+}
+.box-comment {
+	width: 75%;
+	position: relative;
+	margin-bottom: 20px;
+}
+.box-comment-img {
+	position: absolute;
+	top: 5px;
+	left: 10px;
+	border-radius: 50%;
+}
+#add-comment {
+	background-color: var(--color-highligth-gray);
+	padding: 10px 10px 10px 50px;
+	width: 100%;
+	border: none;
+	border-radius: 5px;
+	box-shadow: 0 1px 2px var(--color-gray);
+}
+#add-comment:active {
+	border:none;
+}
+
 /*--------Sugerencias------*/
 .suggest {
 	grid-area: suggest;

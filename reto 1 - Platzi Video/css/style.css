@@ -44,8 +44,8 @@ a {
 	display: grid;
 	grid-template: 370px 125px 1fr / .6fr 1fr .8fr;
 	grid-template-areas:	"sidebar video video"
-												"sidebar description description"
-												"sidebar comments suggest"
+							"sidebar description description"
+							"sidebar comments suggest"
 }
 .container {
 	width: 95%;
@@ -208,6 +208,29 @@ a {
 #add-comment:active {
 	border:none;
 }
+.comment-published-user {
+	display: grid;
+	grid-template:  1fr 1fr var(--espaciado) / 50px 15px .9fr;
+	grid-template-areas: "icon . name-user"
+						 "icon . comment";
+}
+.comment-icon-user{
+	grid-area: icon;
+	background-color: gray;
+	padding: 5px 10px;
+	border-radius:50%;
+}
+.comment-name-user {
+	grid-area: name-user;
+}
+.comment {
+	grid-area: comment;
+}
+.comment, .comment-name-user {
+	align-self: center;	
+}
+
+
 
 /*--------Sugerencias------*/
 .suggest {

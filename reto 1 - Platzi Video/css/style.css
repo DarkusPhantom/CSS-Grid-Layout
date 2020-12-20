@@ -97,7 +97,16 @@ a {
 }
 /*Playlist Friend*/
 .playlist .playlist-icon {
+	width: 80%;
+}
+.playlist-icon img, 
+.comment-icon-user img,
+.box-comment-img img {
 	border-radius: 50%;
+	max-width: 32px;
+	max-height:32px;
+	object-fit: cover;
+	object-position: center;
 }
 .playlist .playlist-friend-name {
 	margin-top: 7px;
@@ -197,12 +206,12 @@ a {
 .box-comment-img {
 	position: absolute;
 	top: 5px;
-	left: 10px;
-	border-radius: 50%;
+	left: 7px;
+	height: 30px;
 }
 #add-comment {
 	background-color: var(--color-highligth-gray);
-	padding: 10px 10px 10px 50px;
+	padding: 13px 10px 13px 50px;
 	width: 100%;
 	border: none;
 	border-radius: 5px;
@@ -217,12 +226,11 @@ a {
 }
 .comment-icon-user{
 	grid-area: icon;
-	background-color: gray;
-	padding: 5px 10px;
-	border-radius:50%;
+	margin-left: 5px;
 }
 .comment-name-user {
 	grid-area: name-user;
+	font-weight: 300;
 }
 .comment {
 	grid-area: comment;
@@ -243,9 +251,14 @@ a {
 	margin-bottom: 0;
 }
 .publication-img {
-	/*background-color: gray;*/
 	width: 90%;
 	margin-bottom: var(--espaciado);
+}
+.publication-img img {
+	object-fit: cover;
+	object-position: center;
+	max-width: 300px;
+	max-height: 200px;
 }
 .publication-description {
 	font-size: var(--font-medium);

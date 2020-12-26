@@ -1,0 +1,105 @@
+/*-----------    Variables  ---------------*/
+:root {
+	/*Colors*/
+	--color-red:red;
+	--color-white:white;
+	--color-black: black;
+	--color-gray: #545050;
+	--color-principal:#fd6967; /*Color rosa carne*/
+
+	/*Space*/
+	--espaciado: 10px;
+
+	/*Font-size*/
+	--font-big-bigger:24px;
+	--font-bigger:20px;
+	--font-big: 16px;
+	--font-medium: 14px;
+	--font-small: 12px;
+}
+/*------------  Fuentes  ------------------*/
+/*Roboto*/
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
+/*------------ 		General --------------*/
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	font-family: "Roboto", Arial, sans-serif;
+}
+a {
+	text-decoration: none;
+}
+.container {
+	width: 95%;
+	margin: 0 auto;
+}
+/*---------- 			Main ---------------*/
+#main {
+	width: auto;
+	height: auto;
+	display: grid;
+	grid-template: repeat(2, 1fr) / 100px 1fr;
+	grid-template-areas:	"header header"
+												"aside main";
+}
+/*------------  Header  --------------------*/
+#main-header {
+	grid-area: header;
+	box-shadow: 0 1px 3px var(--color-gray);
+}
+#main-header .container {
+	max-width: 1330px;
+	display: grid;
+	grid-template-columns: [inicio] 120px [col1] 1fr [col2] 35% [col3] 3% [col4] 15% [col5] 5px [col6] 20px [fin];
+	grid-template-rows: 55px;
+	align-items: center;
+}
+/*Logo*/
+.logo{
+	grid-column: inicio / span col1;
+	display: flex;
+}
+.logo:hover,
+.user,
+.btn-option {
+	cursor: pointer;
+}
+.logo-text {
+	margin-left: 5px;
+	font-size: var(--font-big-bigger);
+	color:var(--color-red);
+	align-self: center;
+	justify-self:center;
+}
+/*search-bar*/
+.search-bar {
+	grid-column: col2 / span col3;
+	padding: 5px;
+	border-radius: 7px;
+	border: 1px solid var(--color-gray);
+}
+/*User*/
+.user {
+	grid-column: col4 /span col5;
+	align-items: center;
+	display: flex;
+}
+.name-user {
+	margin-right: 5px;
+	font-weight: bold;
+	font-size: var(--font-big);
+	color: var(--color-gray);
+}
+.icon-user img{
+	border-radius: 50%;
+	background-color: var(--color-red);
+	max-height: 38px;
+	object-fit: cover;
+	object-position: center;
+}
+/*Boton de mas opciones para el usuario*/
+.btn-option {
+	grid-column: col6 / span fin;
+}

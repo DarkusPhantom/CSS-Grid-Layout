@@ -62,17 +62,14 @@ a {
 	grid-column: inicio / span col1;
 	display: flex;
 }
+.logo-text {
+	width: 80%;
+	object-fit: contain;
+}
 .logo:hover,
 .user,
 .btn-option {
 	cursor: pointer;
-}
-.logo-text {
-	margin-left: 5px;
-	font-size: var(--font-big-bigger);
-	color:var(--color-red);
-	align-self: center;
-	justify-self:center;
 }
 /*search-bar*/
 .search-bar {

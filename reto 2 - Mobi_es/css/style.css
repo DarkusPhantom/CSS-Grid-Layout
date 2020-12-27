@@ -109,12 +109,22 @@ a {
 #main-sidebar {
 	grid-area: aside;
 	background-color: var(--color-principal);
-}
-#main-sidebar .container {
 	display: grid;
 	justify-content: center;
-	grid-template-rows: [inicio] 20px [row1] 20px [row2] 20px [row3] 60vh [row4] 20px [fin];
+	grid-template-rows: [inicio] 20px [row1] 20px [row2] 20px [row3] 100vh [row4] 20px [fin];
+	grid-auto-columns: 0fr;
 	grid-gap: 5vh;
+}
+#main-sidebar span {
+	text-align: center;
+	color:var(--color-white);
+	font-weight: 600;
+}
+#main-sidebar span:hover {
+	cursor: pointer;
+}
+#main-sidebar i {
+	display: flex;
 }
 #main-sidebar span:last-child {
 	grid-row: row4 / span fin;

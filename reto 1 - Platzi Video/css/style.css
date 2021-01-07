@@ -3,6 +3,7 @@
 	/*Colors*/
 	--color-dark-blue: #171b2f;
 	--color-blue:#197CDF;
+	--color-blue-opacity: #197cdfc4;
 	--color-white: white;
 	--color-light-gray:rgba(107,103,103,.77);
 	--color-highligth-gray: rgb(165 163 163 / 34%);
@@ -11,6 +12,8 @@
 	--color-red:#F21802;
 	--color-ligth-red: rgba(242,24,2,.9);
 	--color-lila:#7B60D3;
+	--color-yellow-opacity: #eee20ac9;
+	--color-lila-opacity: #7b60d3d1;
 
 	/*Space*/
 	--espaciado: 10px;
@@ -38,9 +41,7 @@ a {
 /*---------- 			Main ---------------*/
 .main {
 	width: auto;
-	height: auto;
-}
-.wrap {
+	height: 100vh;
 	display: grid;
 	grid-template: 370px 125px 1fr / .6fr 1fr 350px;
 	grid-template-areas:	"sidebar video video"
@@ -122,7 +123,7 @@ a {
 /*---------    Descripcion      -------*/
 .description {
 	grid-area: description;
-	padding: 20px 15px;
+	padding: 15px;
 	box-shadow: 0 1px 3px var(--color-gray);
 }
 /*Nombre video*/
@@ -142,25 +143,25 @@ a {
 }
 .description-option {
 	display: grid;
-	grid-template-columns: repeat(2, 1fr);
-	padding: 10px 0;
+	grid-template-columns: [start] 140px [col1] 70px [col2] 70px [start-space] 10% [end-space] 80px [col5] 80px [col6] 80px [col7] 80px [end];
+	grid-template-rows: 50px;
+	grid-gap: 10px;
+	align-items: center;
 }
 /*descripcion botones*/
 .btn {
 	border-radius: 20px;
 	font-size: var(--font-small);
 	padding: 7px 10px;
-	margin-right: var(--espaciado);
 	color: var(--color-white);
-}
-.btn:last-child {
-	margin: 0;
+	text-align: center;
 }
 .add-list {
+	width: 80%;
 	border-radius: 10px;
 	background-color: var(--color-red);
 	font-size: var(--font-medium);
-	padding: 10px 12px;
+	grid-column: start / span col1;
 }
 .add-list:hover {
 	background-color: var(--color-ligth-red);
@@ -174,15 +175,28 @@ a {
 }
 .electronic {
 	background-color: var(--color-blue);
+	grid-column: end-space / span col5;
+}
+.electronic:hover {
+	background-color: var(--color-blue-opacity);
 }
 .pikachu {
 	background-color: var(--color-yellow);
 }
+.pikachu:hover {
+	background-color: var(--color-yellow-opacity);
+}
 .dance {
 	background-color: var(--color-lila);
 }
+.dance:hover {
+	background-color: var(--color-lila-opacity);
+}
 .pokemon {
 	background-color: var(--color-red);
+}
+.pokemon:hover {
+	background-color: var(--color-ligth-red);
 }
 /*--------     Comments      -----------*/
 .comments {
@@ -264,4 +278,20 @@ a {
 	font-size: var(--font-medium);
 	text-align: center;
 	width: 85%;
+}
+
+@media screen and (max-width: 1024px) {
+
+}
+
+@media screen and (max-width: 768px) {
+	
+}
+
+@media screen and (max-width: 480px) {
+
+}
+
+@media screen and (max-width: 320px) {
+	
 }

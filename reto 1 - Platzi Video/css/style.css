@@ -55,23 +55,29 @@ a {
 /*---------   Sidebar     ---------*/
 .sidebar {
 	grid-area: sidebar;
-	height: 170vh;
-	padding: 15px 0 0 10px;
+	display: flex;
+	flex-wrap: wrap;
+	/*justify-content: center;*/
+	height: min-content;
 	background-color: var(--color-dark-blue);
 	color: var(--color-white);
 }
 /*Logo*/
 .logo {
-	margin-bottom: var(--espaciado);
+	margin: var(--espaciado) 0 var(--espaciado) var(--espaciado);
+	max-width: 200px;
+}
+.logo img {
+	width: 100%;
 }
 /*-----------------   Playlist   ----------*/
 .container-playlist {
-	width: 95%;
-	margin: 0 auto;
+	/*max-width: 350px;*/
 }
 .my-playlist,
 .playlist-friends {
 	width: 80%;
+	margin-left: 15px;
 }
 .playlist-name, .playlist-friend-name{
 	font-size: var(--font-medium);
@@ -97,20 +103,23 @@ a {
 	text-decoration-line: underline;
 }
 /*Playlist Friend*/
-.playlist .playlist-icon {
-	width: 80%;
+.playlist-icon {
+	justify-self: center;
 }
 .playlist-icon img, 
 .comment-icon-user img,
 .box-comment-img img {
 	border-radius: 50%;
-	max-width: 32px;
-	max-height:32px;
+	width: 100%;
+	max-width: 35px;
+	height: 100%;
+	max-height:35px;
 	object-fit: cover;
 	object-position: center;
 }
 .playlist .playlist-friend-name {
-	margin-top: 7px;
+	align-self: center;
+	margin-left: 10px;
 }
 /*---------      Video     ------------*/
 .video {
@@ -285,7 +294,46 @@ a {
 }
 
 @media screen and (max-width: 768px) {
-	
+	.main {
+		display: block;
+	}
+	.logo {
+		margin: 0 0 0 5%;
+		/*display: none;*/
+		justify-content: center;
+	}
+	.sidebar {
+		/**min-height: 10vh;**/
+		height: auto;
+	}
+	.container-playlist {
+		display: none;
+		width: auto;
+	}
+	.my-playlist,
+	.playlist-friends {
+		width: fit-content;
+		margin: auto;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+	.my-playlist {
+		margin-bottom: 8vh;
+	}
+	.playlist-title {
+		text-align: center;
+	}
+	.my-playlist .playlist {
+		display: block;
+		text-align: center;
+	}
+	.playlist-icon {
+		width: auto;
+	}
+	.playlist-number {
+		display: none;
+	}
 }
 
 @media screen and (max-width: 480px) {

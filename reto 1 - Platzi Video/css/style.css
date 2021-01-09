@@ -41,7 +41,7 @@ a {
 /*---------- 			Main ---------------*/
 .main {
 	width: auto;
-	height: 100vh;
+	/*height: 100vh;*/
 	display: grid;
 	grid-template: 370px 125px 1fr / .6fr 1fr 350px;
 	grid-template-areas:	"sidebar video video"
@@ -65,10 +65,10 @@ a {
 /*Logo*/
 .logo {
 	margin: var(--espaciado) 0 var(--espaciado) var(--espaciado);
-	max-width: 200px;
+	width: 75%;
 }
 .logo img {
-	width: 100%;
+	max-width: 100%;
 }
 /*-----------------   Playlist   ----------*/
 .container-playlist {
@@ -105,17 +105,13 @@ a {
 /*Playlist Friend*/
 .playlist-icon {
 	justify-self: center;
+	width: 75%;
 }
 .playlist-icon img, 
 .comment-icon-user img,
 .box-comment-img img {
 	border-radius: 50%;
-	width: 100%;
-	max-width: 35px;
-	height: 100%;
-	max-height:35px;
-	object-fit: cover;
-	object-position: center;
+	max-width: 100%;
 }
 .playlist .playlist-friend-name {
 	align-self: center;
@@ -132,8 +128,12 @@ a {
 /*---------    Descripcion      -------*/
 .description {
 	grid-area: description;
-	padding: 15px;
+	padding-top: 1.3em;
 	box-shadow: 0 1px 3px var(--color-gray);
+}
+.description-container {
+	margin: auto;
+	width: 97%;
 }
 /*Nombre video*/
 .description-name-video {
@@ -152,7 +152,7 @@ a {
 }
 .description-option {
 	display: grid;
-	grid-template-columns: [start] 140px [col1] 70px [col2] 70px [start-space] 10% [end-space] 80px [col5] 80px [col6] 80px [col7] 80px [end];
+	grid-template-columns: [start] 140px [col1] 70px [col2] 70px [start-space] 10% [end-space] 1fr [end];
 	grid-template-rows: 50px;
 	grid-gap: 10px;
 	align-items: center;
@@ -160,7 +160,7 @@ a {
 /*descripcion botones*/
 .btn {
 	border-radius: 20px;
-	font-size: var(--font-small);
+	font-size: .76em;
 	padding: 7px 10px;
 	color: var(--color-white);
 	text-align: center;
@@ -182,9 +182,11 @@ a {
 	color: var(--color-white);
 	background-color: var(--color-gray);
 }
+.tags{
+	grid-column: end-space / span end;
+}
 .electronic {
 	background-color: var(--color-blue);
-	grid-column: end-space / span col5;
 }
 .electronic:hover {
 	background-color: var(--color-blue-opacity);
@@ -228,14 +230,15 @@ a {
 }
 .box-comment-img {
 	position: absolute;
-	top: 5px;
+	top: 7px;
 	left: 7px;
-	height: 30px;
+	height: 78%;
+	width: 11.5%;
 }
-#add-comment {
+#add-comment{
 	background-color: var(--color-highligth-gray);
-	padding: 13px 10px 13px 50px;
 	width: 100%;
+	padding: 13px 10px 13px 50px;
 	border: none;
 	border-radius: 5px;
 	box-shadow: 0 1px 2px var(--color-gray);
@@ -243,13 +246,15 @@ a {
 /*Seccion de comentarios publicados*/
 .comment-published-user {
 	display: grid;
-	grid-template:  1fr 1fr var(--espaciado) / 50px 15px .9fr;
-	grid-template-areas: "icon . name-user"
-						 "icon . comment";
+	grid-template:  1fr 1fr var(--espaciado) / 50px .9fr;
+	grid-template-areas: "icon name-user"
+											 "icon comment";
+	font-size: .85em;
 }
 .comment-icon-user{
 	grid-area: icon;
-	margin-left: 5px;
+	justify-self:center;
+	width: 75%;
 }
 .comment-name-user {
 	grid-area: name-user;
@@ -274,33 +279,33 @@ a {
 	margin-bottom: 0;
 }
 .publication-img {
-	width: 90%;
+	width: 85%;
 	margin-bottom: var(--espaciado);
 }
 .publication-img img {
 	object-fit: cover;
 	object-position: center;
-	max-width: 300px;
+	max-width: 100%;
 	max-height: 200px;
 }
 .publication-description {
 	font-size: var(--font-medium);
-	text-align: center;
+	text-align: left;
 	width: 85%;
 }
 
-@media screen and (max-width: 1024px) {
-
-}
+@media screen and (max-width: 1024px) {}
 
 @media screen and (max-width: 768px) {
 	.main {
-		display: block;
+		display: flex;
+		flex-direction: column;
 	}
 	.logo {
-		margin: 0 0 0 5%;
+		margin: auto;
+		width: 30%;
 		/*display: none;*/
-		justify-content: center;
+		display: inherit;
 	}
 	.sidebar {
 		/**min-height: 10vh;**/
@@ -334,12 +339,57 @@ a {
 	.playlist-number {
 		display: none;
 	}
+	/*
+	.video {
+		max-height: 50vh;
+	}
+	.video iframe {
+		height: auto; Quitar el height para el video iframe o de lo contrario no funciona
+		max-height: inherit;
+	}*/
+	.description {
+		margin-top: -5px;
+	}
+	.comments, .suggest {
+		padding: 1.3em 0 0 0;
+		width: 95%;
+		margin: auto;
+	}
+	.box-comment-img {
+		width: 6%;
+	}
+	.suggest-published {
+		display: flex;
+	}
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (min-width: 480px) and (max-width: 760px) {
+	.description-option {
+		grid-template-areas: 
+	}
+	#add-list {
+		width: 100%;
+	}
+	.suggest {
 
+	}
+	.suggest-published {
+		flex-direction: column;
+	}
+	.publication {
+		display: inherit;
+		align-items: center;
+	}
+	.publication-img {
+		margin-bottom: auto;
+	}
+	.publication-description {
+		margin-left: 3%;
+	}
 }
 
 @media screen and (max-width: 320px) {
-	
+	.publication-description {
+		text-align: center;
+	}
 }
